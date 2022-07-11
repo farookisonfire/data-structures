@@ -71,4 +71,21 @@ class LinkedList {
     this.length++;
     return this;
   }
+
+  shift() {
+    if (!this.length) return undefined;
+
+    let shiftedNode = this.head;
+
+    if (this.length === 1) {
+      this.tail = null;
+      this.head = null;
+    } else {
+      this.head = shiftedNode.next;
+      shiftedNode.next = null;
+    }
+
+    this.length--;
+    return shiftedNode;
+  }
 }
