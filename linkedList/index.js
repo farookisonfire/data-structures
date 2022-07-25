@@ -88,4 +88,15 @@ class LinkedList {
     this.length--;
     return shiftedNode;
   }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    let node = this.head;
+
+    for (let i = 0; i < index; i++) {
+      node = node.next;
+    }
+
+    return node;
+  }
 }
